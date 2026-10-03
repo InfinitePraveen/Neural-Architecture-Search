@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Neural Architecture Search</title>
+<style>
+body{font-family:Arial,sans-serif;background:#f4f6f8;color:#20252b;margin:0}
+.container{max-width:850px;margin:50px auto;padding:20px}
+.card{background:#fff;border-radius:16px;padding:32px;box-shadow:0 8px 30px rgba(0,0,0,.08)}
+.tag{display:inline-block;padding:7px 12px;border-radius:20px;background:#eef2ff;margin:4px}
+button{padding:12px 20px;border:0;border-radius:8px;background:#222;color:#fff}
+.result{margin-top:20px;padding:18px;border-radius:10px;background:#eef9f0}
+.error{margin-top:20px;padding:18px;border-radius:10px;background:#fff0f0}
+footer{margin-top:25px;line-height:1.8;font-size:14px} a{color:#2457d6}
+</style>
+</head>
+<body><div class="container"><div class="card">
+<h1>Neural Architecture Search</h1>
+<p>This demo uses the neural-network architecture selected by Optuna. Upload a small 28×28 grayscale fashion image.</p>
+<span class="tag">NAS</span><span class="tag">AutoML</span><span class="tag">Optuna</span><span class="tag">TensorFlow</span>
+<hr>
+<form method="post" enctype="multipart/form-data">{% csrf_token %}{{ form.as_p }}<button type="submit">Predict</button></form>
+{% if prediction %}<div class="result"><strong>Prediction:</strong> {{ prediction }}</div>{% endif %}
+{% if error %}<div class="error">{{ error }}</div>{% endif %}
+<footer><strong>Praveen Kumar</strong><br>
+GitHub: <a href="https://github.com/InfinitePraveen" target="_blank">github.com/InfinitePraveen</a><br>
+LinkedIn: <a href="https://www.linkedin.com/in/infinitepraveen/" target="_blank">linkedin.com/in/infinitepraveen</a></footer>
+</div></div></body></html>
